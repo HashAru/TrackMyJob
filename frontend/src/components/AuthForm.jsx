@@ -62,8 +62,10 @@ function AuthForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = isLogin ? '/api/auth/login' : '/api/auth/signup';
-      const res = await axios.post(`${API}${url}`, form);
+      // const url = isLogin ? '/api/auth/login' : '/api/auth/signup';
+      // const res = await axios.post(`${API}${url}`, form);
+      const url = isLogin ? `${API}/api/auth/login` : `${API}/api/auth/signup`;
+      const res = await axios.post(url, form);
       login(res.data);
     } catch (err) {
       alert(err.response?.data?.error || 'Error');
