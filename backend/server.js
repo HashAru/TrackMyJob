@@ -50,7 +50,7 @@ const allowedOrigins = [
 //   credentials: true
 // }));
 
-app.use(cors({ origin: 'https://your-project-name.vercel.app', credentials: true }));
+app.use(cors({ origin: 'https://track-my-job-phi.vercel.app', credentials: true }));
 
 
 // ====== Middleware ======
