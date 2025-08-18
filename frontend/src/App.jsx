@@ -99,6 +99,9 @@ function App() {
           </div>
         )}
       </div>
+      <footer><p className="text-center text-gray-600 mb-8"><br></br>
+          Created by Arunima Sharma.
+        </p></footer>
     </div>
   );
 }

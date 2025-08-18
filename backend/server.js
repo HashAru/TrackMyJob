@@ -17,5 +17,8 @@ mongoose.connect(process.env.MONGO_URI, { dbName: 'job-tracker' })
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/applications', require('./routes/applications'));
 
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`🚀 Backend running on http://localhost:${PORT}`));
+
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Backend running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
