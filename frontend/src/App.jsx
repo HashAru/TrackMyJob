@@ -56,6 +56,7 @@ import ApplicationForm from './components/ApplicationForm';
 import ApplicationList from './components/ApplicationList';
 import ApplicationChartMonth from './components/ApplicationChartMonth';
 import ApplicationChartStatus from './components/ApplicationChartStatus';
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -63,13 +64,13 @@ function App() {
 
   useEffect(() => {
     if (!user) return;
-    axios.get('http://localhost:5000/api/applications', {
+    axios.get(`${API}/api/applications`, {
       headers: { Authorization: `Bearer ${user.token}` }
     }).then(res => setApplications(res.data));
   }, [user]);
 
   const addApplication = (payload) => {
-    axios.post('http://localhost:5000/api/applications', payload, {
+    axios.post(`${API}/api/applications`, payload, {
       headers: { Authorization: `Bearer ${user.token}` }
     }).then(res => setApplications(prev => [res.data, ...prev]));
   };

@@ -50,6 +50,7 @@
 import { useState, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function AuthForm() {
   const { user, login, logout } = useContext(AuthContext);
@@ -62,7 +63,7 @@ function AuthForm() {
     e.preventDefault();
     try {
       const url = isLogin ? '/api/auth/login' : '/api/auth/signup';
-      const res = await axios.post(`http://localhost:5000${url}`, form);
+      const res = await axios.post(`${API}${url}`, form);
       login(res.data);
     } catch (err) {
       alert(err.response?.data?.error || 'Error');
