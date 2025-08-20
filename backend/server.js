@@ -11,7 +11,7 @@
 // app.use(morgan('dev'));
 
 // mongoose.connect(process.env.MONGO_URI, { dbName: 'job-tracker',useNewUrlParser: true,
-  useUnifiedTopology: true })
+//  useUnifiedTopology: true })
 //   .then(() => console.log('✅ MongoDB connected'))
 //   .catch(err => console.error('Mongo error:', err.message));
 
