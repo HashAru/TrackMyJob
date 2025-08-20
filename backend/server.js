@@ -59,7 +59,8 @@ app.use(express.json());
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
 // ====== MongoDB Connection ======
-mongoose.connect(process.env.MONGO_URI, { dbName: 'job-tracker'})
+mongoose.connect(process.env.MONGO_URI, { dbName: 'job-tracker',useNewUrlParser: true, 
+  useUnifiedTopology: true })
   .then(() => console.log('✅ MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err.message));
 
